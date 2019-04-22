@@ -45,5 +45,11 @@ describe('resident tests', () => {
         return true;
       }
     });
+
+    it('should limit results by 1', async () => {
+      const residents = await manager.list({ page: 1, limit: 1 });
+      expect(residents).to.have.lengthOf(1);
+      return true;
+    });
   });
 });
