@@ -1,0 +1,25 @@
+{
+  "name": "kiper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "env NODE_ENV=test mocha ./___specs___/*.spec.js",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaohencke/kiper.git"
+  },
+  "author": "Joao Hencke <joao.hencke@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaohencke/kiper/issues"
+  },
+  "homepage": "https://github.com/joaohencke/kiper#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2"
+  }
+}
