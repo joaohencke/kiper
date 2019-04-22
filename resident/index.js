@@ -1,5 +1,15 @@
 const ResidentModel = require('./model');
 
+/**
+ * Creates a new resident
+ * @param {Object} entity
+ * @param {String} entity.name
+ * @param {String} entity.email
+ * @param {String} entity.cpf
+ * @param {Number} entity.apartment
+ * @param {String} entity.block
+ * @returns {Promise<Object>} created Resident
+ */
 exports.create = async ({
   name, email, cpf, apartment, block,
 }) => {
@@ -12,6 +22,17 @@ exports.create = async ({
   return resident.toObject();
 };
 
+/**
+ * Updates a saved resident
+ * @param {Object} entity
+ * @param {Object} entity.id
+ * @param {String} entity.name
+ * @param {String} entity.email
+ * @param {String} entity.cpf
+ * @param {Number} entity.apartment
+ * @param {String} entity.block
+ * @returns {Promise<Object>} updated resident
+ */
 exports.update = ({
   id, name, email, cpf, apartment, block,
 }) => {
@@ -28,6 +49,19 @@ exports.update = ({
   return ResidentModel.findById(id);
 };
 
+/**
+ * List residents and filter when it needs.
+ * @param {Object} filter
+ * @param {Object} filter.id
+ * @param {String} filter.name
+ * @param {String} filter.email
+ * @param {String} filter.cpf
+ * @param {Number} filter.apartment
+ * @param {String} filter.block
+ * @param {Number} filter.page
+ * @param {Number} filter.limit
+ * @returns {Promise<Array>}
+ */
 exports.list = ({
   name, email, cpf, apartment, block, page, limit = 30,
 }) => {
@@ -50,4 +84,10 @@ exports.list = ({
   return command.exec();
 };
 
+/**
+ * Remove a resident by it's id
+ * @param {Object} entity
+ * @param {Object} entity.id
+ * @returns {Promise}
+ */
 exports.remove = ({ id }) => ResidentModel.findByIdAndDelete(id);
