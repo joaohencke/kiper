@@ -56,7 +56,7 @@ Response Body:
 }
 ```
 
-The access token received must be placed on the Request Header `Authorization: Bearer ${access_token}` of the next requests.
+The access token received must be placed on the Request Header `Authorization: ${token_type} ${access_token}` of the next requests.
 
 *POST* `/residents` - Creates a new Resident
 Request Body Parameters
