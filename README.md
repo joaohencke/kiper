@@ -15,6 +15,7 @@ This will start express on port 8888. The api's will be avaiable at `http://loca
 ## API's
 
 *POST* `/users` - Creates a user to use the application
+
 Request parameters:
 ```json
 {
@@ -27,6 +28,7 @@ Returns the created user.
 *GET* `/users` - List all users created on database
 
 *POST* `/auth/token` - Authenticate user by password or refresh token
+
 Request Parameters:
 ```json
 {
@@ -59,6 +61,7 @@ Response Body:
 The access token received must be placed on the Request Header `Authorization: ${token_type} ${access_token}` of the next requests.
 
 *POST* `/residents` - Creates a new Resident
+
 Request Body Parameters
 ```javascript
 {
@@ -71,6 +74,7 @@ Request Body Parameters
 ```
 
 *PUT* `/residents/:id` - Updates an existing Resident
+
 Request Body Parameters
 ```javascript
 {
@@ -85,6 +89,7 @@ Request Body Parameters
 *DELETE* `/residents/:id` - Removes an existing Resident from database
 
 *GET* `/residents`- List residents - they can be filtered
+
 Request QueryString Parameters
 ```javascript
 {
