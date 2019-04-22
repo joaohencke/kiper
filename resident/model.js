@@ -11,7 +11,6 @@ const ResidentSchema = new mongoose.Schema({
   },
   cpf: {
     type: String,
-    unique: true,
   },
   apartment: {
     type: Number,
@@ -22,6 +21,7 @@ const ResidentSchema = new mongoose.Schema({
     enum: ['A', 'B', 'C'],
   },
 });
+
 
 const ResidentModel = mongoose.model('Resident', ResidentSchema);
 
