@@ -44,7 +44,7 @@ exports.list = ({
   let command = ResidentModel.find(query).lean();
 
   if (page) {
-    command = command.limit(limit).skip((page - 1) * limit);
+    command = command.limit(Number(limit)).skip((Number(page) - 1) * Number(limit));
   }
 
   return command.exec();
