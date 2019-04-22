@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 const { Request, Response } = require('oauth2-server');
 const UnauthorizedRequestError = require('oauth2-server/lib/errors/unauthorized-request-error');
 const OAuthServer = require('oauth2-server');
