@@ -1,10 +1,13 @@
 const express = require('express');
 const { validate, struct } = require('../../utils/validation');
+const auth = require('../../auth');
 const manager = require('../');
 
 const writeRouter = express.Router({ mergeParams: true });
 
 module.exports = writeRouter;
+
+writeRouter.use(auth.authenticate());
 
 writeRouter.post('/',
   validate({

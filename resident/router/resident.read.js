@@ -1,10 +1,13 @@
 const express = require('express');
 const { validate, struct } = require('../../utils/validation');
+const auth = require('../../auth');
 const manager = require('../');
 
 const readRouter = express.Router({ mergeParams: true });
 
 module.exports = readRouter;
+
+readRouter.use(auth.authenticate());
 
 readRouter.get('/',
   validate({
