@@ -35,3 +35,5 @@ Object.keys(apis).forEach((apiName) => {
 app.use((err, req, res, next) => handler(res, err));
 
 app.listen(config.port, () => console.log(`express litening on ${config.port}`));
+
+module.exports = app;
