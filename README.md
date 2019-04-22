@@ -16,9 +16,9 @@ npm start
 ```
 
 ## Tests
-``bash
+```bash
 npm test
-``
+```
 
 This will start express on port 8888. The api's will be avaiable at `http://localhost:8888/api`
 
