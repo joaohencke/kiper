@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "env NODE_ENV=test mocha ./___specs___/*.spec.js",
+    "start": "env NODE_ENV=development nodemon --inspect index.js",
     "lint": "eslint"
   },
   "repository": {
@@ -20,6 +21,15 @@
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.2"
+    "eslint-plugin-import": "^2.17.2",
+    "nodemon": "^1.18.11"
+  },
+  "dependencies": {
+    "boom": "^7.3.0",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "mongoose": "^5.5.2",
+    "morgan": "^1.9.1",
+    "superstruct": "^0.6.1"
   }
 }
