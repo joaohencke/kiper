@@ -1,5 +1,10 @@
 # Kiper
 
+
+## Requirements
+- [NodeJS](https://nodejs.org)
+- [MongoDB](https://www.mongodb.com/) mongod server running on port `27017``
+
 ## Installing dependencies
 ```bash
 npm install
