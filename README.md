@@ -14,7 +14,7 @@ This will start express on port 8888. The api's will be avaiable at `http://loca
 
 ## API's
 
-*POST* `/users/` - Creates a user to use the application
+*POST* `/users` - Creates a user to use the application
 Request parameters:
 ```json
 {
@@ -23,6 +23,8 @@ Request parameters:
 }
 ```
 Returns the created user.
+
+*GET* `/users` - List all users created on database
 
 *POST* `/auth/token` - Authenticate user by password or refresh token
 Request Parameters:
@@ -53,3 +55,45 @@ Response Body:
     "refresh_token": "82a8b756638a9273aa69d0b5f4492a7444564b15"
 }
 ```
+
+The access token received must be placed on the Request Header `Authorization: Bearer ${access_token}` of the next requests.
+
+*POST* `/residents` - Creates a new Resident
+Request Body Parameters
+```javascript
+{
+    name: 'string',
+    email: 'string & email',
+    cpf: struct.optional('cpf'),
+    apartment: 'numeric',
+    block: struct.enum(['A', 'B', 'C']),
+  }
+```
+
+*PUT* `/residents/:id` - Updates an existing Resident
+Request Body Parameters
+```javascript
+{
+    name: 'string',
+    email: 'string & email',
+    cpf: struct.optional('cpf'),
+    apartment: 'numeric',
+    block: struct.enum(['A', 'B', 'C']),
+  }
+```
+
+*DELETE* `/residents/:id` - Removes an existing Resident from database
+
+*GET* `/residents`- List residents - they can be filtered
+Request QueryString Parameters
+```javascript
+{
+    name: struct.optional('string'),
+    email: struct.optional('string'),
+    cpf: struct.optional('string'),
+    apartment: struct.optional('numeric'),
+    block: struct.optional(struct.enum(['A', 'B', 'C'])),
+    page: struct.optional('numeric'),
+    limit: struct.optional('numeric'),
+  }
+  ```
